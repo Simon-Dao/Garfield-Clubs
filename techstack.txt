@@ -1,0 +1,9 @@
+backend:
+    mongoose(accessing the database)
+    express(for creating request endpoints)
+
+frontend:
+    js
+    html
+    w3 schools css library
+    axios(for making requests to the server)
