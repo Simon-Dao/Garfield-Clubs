@@ -7,9 +7,9 @@ const createList = async () => {
 
     console.log(clubs)
 
-    clubs.forEach(() => {
+    /*clubs.forEach(() => {
         createClubCard()
-    })
+    })*/
 }
 
 const createClubCard = () => {

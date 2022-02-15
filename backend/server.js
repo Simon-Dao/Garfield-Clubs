@@ -1,7 +1,11 @@
 const express = require('express')
-const app = express()
 const cors = require('cors')
+const mongoose = require('mongoose')
+const app = express()
 const port = 8080
+
+
+mongoose.connect()
 
 //this allows the server to accept any request regardless of the origin
 //this is a potential security flaw so please dont put this in production
