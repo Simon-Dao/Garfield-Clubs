@@ -1,11 +1,19 @@
 const express = require('express')
 const cors = require('cors')
-const mongoose = require('mongoose')
 const app = express()
 const port = 8080
 
+const mongoose = require('mongoose')
 
-mongoose.connect()
+mongoose.connect(
+    'mongodb+srv://simon:password100@cluster0.cy8ah.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+    , { useNewUrlParser: true,
+        useUnifiedTopology: true,}
+)
+
+const db = mongoose.connection
+db.on('error', (error) => console.log(error))
+db.once('open', () => console.log('connected to database'))
 
 //this allows the server to accept any request regardless of the origin
 //this is a potential security flaw so please dont put this in production
@@ -16,20 +24,6 @@ app.get('/', (req,res) => {
 })
 
 app.get('/club-list', (req,res) => {
-
-    //get data from the database
-    /*const data = [
-        {
-            name: ,
-            advisor: ,
-            day: , 
-            room: , 
-            email: , 
-            phone:
-        },
-        {},
-        {}
-    ]*/
 
     res.send(['club1','club2'])
 })
