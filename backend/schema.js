@@ -5,6 +5,11 @@ advisor: ,
             day: , 
             room: , 
             contactInfo: []
+{
+    name: 'test',
+    advisor: 'simon dao',
+
+}
             */
 
 const ClubSchema = mongoose.Schema({
@@ -17,11 +22,17 @@ const ClubSchema = mongoose.Schema({
       require: false
   },
   meetingTimes: {
-      type:[]
+      type:[],
+      require: false
   },
-  //I am storing 
-  rooms:[String]
-
+  room: {
+    type: String,
+    require: false
+  },
+  contactInfo: {
+      type: String,
+      require: false
+  }
 });
 
-module.exports = mongoose.model("user", UserScheme);
+module.exports = mongoose.model("clubData", ClubSchema,'clubData');

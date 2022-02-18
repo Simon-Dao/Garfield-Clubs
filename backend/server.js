@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const app = express()
 const port = 8080
+const router = require('./routes/route')
 
 const mongoose = require('mongoose')
 
@@ -18,14 +19,10 @@ db.once('open', () => console.log('connected to database'))
 //this allows the server to accept any request regardless of the origin
 //this is a potential security flaw so please dont put this in production
 app.use(cors())
+app.use('/', router)
 
 app.get('/', (req,res) => {
     res.send('Simon was here')
-})
-
-app.get('/club-list', (req,res) => {
-
-    res.send(['club1','club2'])
 })
 
 app.listen(port, () => {
