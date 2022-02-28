@@ -1,16 +1,7 @@
 const mongoose = require("mongoose");
 
-/*
-advisor: ,
-            day: , 
-            room: , 
-            contactInfo: []
-{
-    name: 'test',
-    advisor: 'simon dao',
-
-}
-            */
+//IMPORTANT
+//In order to keep the database organizes, we have to define a schema for all of the data to follow
 
 const ClubSchema = mongoose.Schema({
   name: {
@@ -19,19 +10,19 @@ const ClubSchema = mongoose.Schema({
   },
   advisor: {
       type: String,
-      require: false
+      required: false
   },
   meetingTimes: {
       type:[],
-      require: false
+      required: false
   },
   room: {
     type: String,
-    require: false
+    required: false
   },
   contactInfo: {
       type: String,
-      require: false
+      required: false
   }
 });
 
