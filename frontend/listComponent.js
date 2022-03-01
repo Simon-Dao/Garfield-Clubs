@@ -3,19 +3,16 @@ var baseURL = 'http://localhost:8080/'
 const createList = async () => {
     //let message = await axios.get('http://localhost:8080')
 
+    const body = document.querySelector('body')
+
     let clubs = await axios.get(baseURL+'testing')
 
-    console.log(clubs)
-
-    clubs.forEach( (element, index) => {
+    clubs.forEach((club, index) => {
         //make the element
-        let = document.createElement('div')
+        let club = document.createElement('div')
+        
+        body.appendChild(club)
     });
-
-}
-
-const createClubCard = () => {
-    //create card
 
 }
 

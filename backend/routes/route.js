@@ -15,10 +15,10 @@ const sendError = (err, res) => {
     })
 }
 
-const sendData = async (queryString, res) => {
+const sendData = async (query, res) => {
     try {
-        const data = await Model.find({name:'test'})
-
+        const data = await Model.find(query)
+        console.log(data)
         res.send(data)
 
     } catch(err) {
@@ -28,7 +28,7 @@ const sendData = async (queryString, res) => {
 
 router.get('/testing', (req,res) => {
 
-    sendData('asdas', res)
+    sendData({}, res)
 })
 
 router.get('/get-club/:name', async (req,res) => {
@@ -37,7 +37,7 @@ router.get('/get-club/:name', async (req,res) => {
 
     try {
         const data = await Model.find({name: name})
-
+        console.log(data)
         res.send(data)
 
     } catch(err) {

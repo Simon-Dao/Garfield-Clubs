@@ -12,11 +12,23 @@ const ClubSchema = mongoose.Schema({
       type: String,
       required: false
   },
-  meetingTimes: {
-      type:[],
+  days: {
+      type:String,
       required: false
   },
+  images: {
+    type:[],
+    required: false
+},
   room: {
+    type: String,
+    required: false
+  },
+  description: {
+    type: String,
+    required: false
+  },
+  mission: {
     type: String,
     required: false
   },
