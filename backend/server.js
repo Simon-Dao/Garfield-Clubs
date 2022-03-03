@@ -21,7 +21,7 @@ db.once('open', () => console.log('connected to database'))
 
 //this allows the server to accept any request regardless of the origin
 //this is a potential security flaw so please dont put this in production
-app.use(cors())
+app.use(cors())  
 app.use('/', router)
 
 app.listen(port, () => {

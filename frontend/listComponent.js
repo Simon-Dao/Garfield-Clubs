@@ -7,6 +7,8 @@ const createList = async () => {
 
     let clubs = await axios.get(baseURL+'testing')
 
+    const clubCard = 'hello this is html'
+    
     clubs.forEach((club, index) => {
         //make the element
         let club = document.createElement('div')

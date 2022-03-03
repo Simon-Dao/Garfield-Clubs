@@ -33,3 +33,7 @@
     opacity: 0.3;
     transition: 15s;
 }
+
+*:before {
+    margin-right: 20px;
+}
