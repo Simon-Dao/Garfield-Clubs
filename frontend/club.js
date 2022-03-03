@@ -3,9 +3,9 @@
 
 var baseURL = 'http://localhost:8080/'
 
-async function editStuff() {
+async function editName() {
 
-    let name = 'Anime Club'
+    let name = 'Japanese Student Association'
 
     let clubs = await axios.get(baseURL+'get-club/'+name)
 
@@ -13,4 +13,15 @@ async function editStuff() {
     clubName.innerHTML = clubs.data[0].name
 }
 
-editStuff()
+async function editRoom(){
+
+    let name = 'Japanese Student Association'
+
+    let clubs = await axios.get(baseURL+'get-club/'+name)
+
+    let clubName = document.querySelector('#club-room')
+    clubName.innerHTML = clubs.data[0].room
+}
+
+editName()
+editRoom()

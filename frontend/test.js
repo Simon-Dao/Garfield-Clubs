@@ -5,4 +5,8 @@ const testFunc = async () => {
     console.log(message)
 }
 
+async function editName {
+    
+}
+
 testFunc()
