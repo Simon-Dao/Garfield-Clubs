@@ -30,7 +30,6 @@ const createList = async () => {
 
         console.log(clubHtml.innerHTML)
 
-
         container.appendChild(clubHtml)
     });
 
