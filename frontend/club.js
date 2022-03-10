@@ -22,6 +22,8 @@ function getCookie(cname) {
 async function editDescription(){
     let name = getCookie("club");
 
+    console.log(name)
+
     let clubs = await axios.get(baseURL+'get-club/'+name)
 
     let clubName = document.querySelector('#club-names')

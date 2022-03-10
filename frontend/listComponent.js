@@ -13,7 +13,7 @@ const createList = async () => {
         
         let cardHTML = '<div class="w3-row-padding">'+
         '<div style="width: 300px" class="w3-margin-bottom">'+
-        '<a href="description.html" style="text-decoration: none;">' +
+        '<a href="description.html" style="text-decoration: none;" onClick="setCookie(\'club\',\''+club.name+'\')">' +
             '<div class="w3-container w3-white">'+
             `    <p><b>${club.name}</b></p>`+
            '     <p>Learn about environmental issues and sustainability, get volunteer hours, participate in'+
