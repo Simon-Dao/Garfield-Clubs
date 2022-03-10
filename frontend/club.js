@@ -3,8 +3,7 @@
 
 var baseURL = 'http://localhost:8080/'
 
-async function editDescription(){
-    let name = 'Key Club'
+async function editDescription(name){
 
     let clubs = await axios.get(baseURL+'get-club/'+name)
 
