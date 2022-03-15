@@ -18,7 +18,6 @@ const sendError = (err, res) => {
 const sendData = async (query, res) => {
     try {
         const data = await Model.find(query)
-        console.log(data)
         res.send(data)
 
     } catch(err) {
@@ -47,8 +46,24 @@ router.get('/get-club/:name', async (req,res) => {
 
 router.get('/get-clubs', async (req, res) => {
 
+
+
     try {
         const data = await Model.find({})
+        
+        res.send(data)
+    } catch(err) {
+        sendError(err,res)
+    }
+})
+
+router.get('/get-clubs/:prefix', async (req, res) => {
+    
+    let prefix = req.params.prefix
+    let ignoreCase = '(?i)'
+    try {
+        
+        const data = await Model.find({name: {$regex:prefix+ignoreCase}})
         
         res.send(data)
     } catch(err) {

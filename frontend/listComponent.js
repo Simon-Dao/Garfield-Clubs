@@ -1,13 +1,12 @@
-
-
 var baseURL = 'http://localhost:8080/'
+var searchBar = document.querySelector('.search-bar')
+let container = document.querySelector("#page-container")
 
-const createList = async () => {    
+var clubs = {}
+
+const createList = async (clubs) => {
     
-    let clubs = await axios.get(baseURL+'testing')
-    
-    const clubCard = 'hello this is html'
-    let container = document.querySelector("#page-container")
+    container.innerHTML = ""
     
     clubs.data.forEach((club, index) => {
         
@@ -22,13 +21,9 @@ const createList = async () => {
          '</a>'
         '</div>'
         
-        testhtml = "<h3>hello world</h3>"
-
         //make the element
         let clubHtml = document.createElement('div')
         clubHtml.innerHTML = cardHTML
-
-        console.log(clubHtml.innerHTML)
 
         container.appendChild(clubHtml)
     });
@@ -36,4 +31,35 @@ const createList = async () => {
     container.style = 'display: flex; flex-wrap: wrap;'
 }
 
-createList()
+async function filterClubs(e, backspace) {
+
+    let key = typeof e !== "undefined"  ? e.key : "" 
+    key = backspace ? "" : key
+
+    //get list of clubs now
+    searchBar = document.querySelector('.search-bar')
+
+    let queryString = searchBar.value + key
+
+    let clubs = await axios.get(baseURL+'get-clubs/'+queryString)    
+
+    console.log(clubs)
+
+    createList(clubs)
+}
+
+searchBar.onkeypress = async (e) => {
+    
+    console.log(e)
+    
+    filterClubs(e)
+} 
+
+searchBar.onkeydown = function() {
+    const key = event.key;
+    if (key === "Backspace") {
+      filterClubs(event, true)
+    }
+  };
+
+filterClubs()

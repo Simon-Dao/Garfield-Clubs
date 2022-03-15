@@ -43,3 +43,9 @@
 *:before {
     margin-right: 20px;
 }
+
+.search-bar {
+    margin-left: 50px;
+    border-radius: 6px;
+    padding: 6px;
+}
