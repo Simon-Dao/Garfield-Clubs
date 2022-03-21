@@ -41,7 +41,7 @@ async function filterClubs(e, backspace) {
 
     let queryString = searchBar.value + key
 
-    let clubs = await axios.get(baseURL+'get-clubs/'+queryString)    
+    let clubs = await axios.get(baseURL+'get-clubs/'+queryString)  
 
     console.log(clubs)
 
