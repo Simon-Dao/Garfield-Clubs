@@ -4,13 +4,14 @@ const app = express()
 const port = 8080
 const router = require('./routes/route')
 const mongoose = require('mongoose')
+require("dotenv").config();
 
 //PLEASE READ THIS
 
 //this code just initializes the server and sets up the config, it doesn't deal with the api endpoints
 
 mongoose.connect(
-    'mongodb+srv://simon:password100@cluster0.cy8ah.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+    process.env.REACT_APP_MONGO_DB_URL
     , { useNewUrlParser: true,
         useUnifiedTopology: true,}
 )

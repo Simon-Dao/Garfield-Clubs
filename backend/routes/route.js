@@ -47,8 +47,6 @@ router.get('/get-club/:name', async (req,res) => {
 
 router.get('/get-clubs', async (req, res) => {
 
-
-
     try {
         const data = await Model.find({})
         
@@ -70,9 +68,7 @@ router.get('/get-clubs/:prefix', async (req, res) => {
 
     try {
         
-        //const data = await Model.find({name: {$regex:s}})
-        //const data = await Model.find({name: {$regex:("/^"+prefix+"/i")}})
-        const data = await Model.find( { name: { $regex: prefix, $options : 'i'} } )
+        const data = await Model.find( { name: { $regex: prefix, $options : 'i'} } ).limit(9)
         
         res.send(data)
     } catch(err) {
