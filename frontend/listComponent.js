@@ -15,8 +15,7 @@ const createList = async (clubs) => {
         '<a href="description.html" style="text-decoration: none;" onClick="setCookie(\'club\',\''+club.name+'\')">' +
             '<div class="w3-container w3-white">'+
             `    <p><b>${club.name}</b></p>`+
-           '     <p>Learn about environmental issues and sustainability, get volunteer hours, participate in'+
-           '          resoration events and hikes. Fun activities and doughnuts!</p>'+
+           `     <p><b>${club.blurb}</b></p>`+
          '   </div>'+
          '</a>'
         '</div>'

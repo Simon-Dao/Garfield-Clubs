@@ -63,15 +63,13 @@ router.get('/get-clubs/:prefix', async (req, res) => {
     let prefix = req.params.prefix
     let ignoreCase = '(?i)'
 
-    //let s = `\\A${prefix}\\Z\\i`
-    //let s = `/^${prefix}/i`
+ 
+ 
     s = "/^" + prefix + "/i"
     console.log(s)
 
     try {
-        
-        //const data = await Model.find({name: {$regex:s}})
-        //const data = await Model.find({name: {$regex:("/^"+prefix+"/i")}})
+
         const data = await Model.find( { name: { $regex: prefix, $options : 'i'} } )
         
         res.send(data)

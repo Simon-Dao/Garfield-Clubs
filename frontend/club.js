@@ -29,7 +29,7 @@ async function editDescription() {
     clubName.innerHTML = clubs.data[0].name
 
     let clubRoom = document.querySelector('#club-room')
-    clubRoom.innerHTML = "Room " + clubs.data[0].room
+    clubRoom.innerHTML = "Room: " + clubs.data[0].room
 
     let clubLocation = document.querySelector('#location')
     clubLocation.innerHTML = "Where: Room " + clubs.data[0].room + ", " + clubs.data[0].advisor
@@ -38,8 +38,17 @@ async function editDescription() {
     clubTime.innerHTML = "When: " + clubs.data[0].days /*+ ", " + clubs.data[0].time*/
 
     let clubDescription = document.querySelector('#description')
+    clubDescription.innerHTML = clubs.data[0].description
 
     let clubMission = document.querySelector('#mission')
+    clubMission.innerHTML = clubs.data[0].mission
+
+    let clubInstagram = document.querySelector('#instagram')
+    clubInstagram.innerHTML = "Instagram: " + clubs.data[0].instagram 
+
+    let clubEmail = document.querySelector('#email')
+    clubEmail.innerHTML = "Email: " + clubs.data[0].email
+
 }
 
 editDescription()
