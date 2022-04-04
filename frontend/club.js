@@ -3,7 +3,6 @@
 
 var baseURL = 'http://localhost:8080/'
 
-
 function getCookie(cname) {
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
@@ -22,9 +21,9 @@ function getCookie(cname) {
 
 async function editDescription() {
     let name = getCookie("club");
-
+    
     let clubs = await axios.get(baseURL + 'get-club/' + name)
-
+    
     let clubName = document.querySelector('#club-names')
     clubName.innerHTML = clubs.data[0].name
 

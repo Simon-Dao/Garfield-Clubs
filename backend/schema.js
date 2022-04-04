@@ -8,6 +8,10 @@ const ClubSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  officers: {
+    type: String,
+      required: false
+  },
   advisor: {
       type: String,
       required: false

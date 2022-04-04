@@ -47,8 +47,6 @@ router.get('/get-club/:name', async (req,res) => {
 
 router.get('/get-clubs', async (req, res) => {
 
-
-
     try {
         const data = await Model.find({})
         
@@ -69,8 +67,13 @@ router.get('/get-clubs/:prefix', async (req, res) => {
     console.log(s)
 
     try {
+<<<<<<< HEAD
 
         const data = await Model.find( { name: { $regex: prefix, $options : 'i'} } )
+=======
+        
+        const data = await Model.find( { name: { $regex: prefix, $options : 'i'} } ).limit(9)
+>>>>>>> 91b59f554f4d80449636fa916a8fb947416545aa
         
         res.send(data)
     } catch(err) {

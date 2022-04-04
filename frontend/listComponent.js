@@ -2,13 +2,14 @@ var baseURL = 'http://localhost:8080/'
 var searchBar = document.querySelector('.search-bar')
 let container = document.querySelector("#page-container")
 
+
 var clubs = {}
 
 const createList = async (clubs) => {
     
     container.innerHTML = ""
     
-    clubs.data.forEach((club, index) => {
+    clubs.forEach((club, index) => {
         
         let cardHTML = '<div class="w3-row-padding">'+
         '<div style="width: 300px" class="w3-margin-bottom">'+
@@ -42,6 +43,7 @@ async function filterClubs(e, backspace) {
 
     let clubs = await axios.get(baseURL+'get-clubs/'+queryString)  
 
+    clubs = clubs.data.slice(pageIndex*cardsPerPage - cardsPerPage, pageIndex* cardsPerPage)
     console.log(clubs)
 
     createList(clubs)
