@@ -49,3 +49,17 @@
     border-radius: 6px;
     padding: 6px;
 }
+
+.centerized {
+    align-items: center;
+    justify-content: center;
+}
+.image {
+    width: 500px;
+    align-self: center;
+}
+
+.selected {
+    background-color: black;
+    color: white;
+}
