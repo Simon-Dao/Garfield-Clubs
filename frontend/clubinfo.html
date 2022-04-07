@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<title>clubpage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Raleway", sans-serif
+    }
+</style>
+
+<body class="w3-content" style="max-width:100% "></body>
+
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3; width:20%;" id="mySidebar"><br>
+    <div class="w3-container">
+        <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey"
+            title="close menu">
+            <i class="fa fa-remove"></i>
+        </a>
+        <img src="https://drive.google.com/thumbnail?id=17JJohO6ItjvlPga7rdUgfIz4Vp6WUeiq" style="width:45%;"
+            class="w3-round"><br><br>
+        <h4><b>CLUBS</b></h4>
+        <p class="w3-text-grey">By Garfield Students</p>
+    </div>
+    <div class="w3-bar-block">
+        <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i
+                class="fa fa-th-large fa-fw w3-margin-right"></i>CLUB SEARCH</a>
+        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
+                class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a>
+        <a href="#club search" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
+                class="fa fa-envelope fa-fw w3-margin-right"></i>ADD A CLUB</a>
+    </div>
+    <div class="w3-panel w3-large">
+    </div>
+</nav>
+
+<!-- Image -->
+<div class="w3-content" style="max-width:80%; width:auto">
+    <div class="mySlides w3-display-container">
+        <style>
+            .parallax {
+              /* The image used */
+              background-image: url("https://blog.assets.thediscoverer.com/2020/03/redwoods.jpg");
+            
+              /* Demensions */
+              width:100%; 
+              width:100%; 
+              height: 400px; 
+              object-fit:cover; 
+              overflow:hidden;
+            
+              /* Create the parallax scrolling effect */
+              background-attachment: fixed;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+          
+            /* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+                @media only screen and (max-device-width: 1366px) {
+                  .parallax {
+                    background-attachment: scroll;
+                  }
+                }
+                </style>
+                </head>
+                <body>
+                
+                <div class="parallax"></div>
+    </div>
+
+
+<!-- Club Info -->
+        <div class="w3-container w3-content w3-center w3-padding-64 w3-light-grey description;" 
+        style="margin-left:32.5%; margin-top:50px; max-width: 55%; padding: 5%; background-color: rgb(215, 212, 219);"
+            id="club"> 
+            <h2 class="w3-wide">CLUB NAME</h2>
+            <p class="w3-opacity"><i>tags, tags, tags</i></p>
+            <p class="w3-justify">Description:</p>
+            <p class="w3-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquipex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                in culpa qui officia deserunt mollit anim id es laborum consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p class="w3-justify">Mission:</p>
+            <p class="w3-justify">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id es laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.</p>
+            <p class="w3-justify">Where: Room 235, Dr. Finley</p>
+            <p class="w3-justify">When: Mondays, Lunch</p>
+        </div>
+    </div>
+</div>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+    title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px">
+
+        <!-- CONTACT -->
+        <footer class="w3-container w3-padding-32 w3-light-grey w3-content">
+            <div class="w3-row-padding">
+        <h2 class="w3-wide w3-center">CONTACT</h2>
+        <div class="w3-row w3-padding-70">
+            <div class="w3-col m6 w3-large w3-margin-bottom">
+                <i class="fa fa-map-marker" style="width:30px"></i> Room 235<br>
+                <i class="fa fa-instagram" style="width:30px"></i> Instagram: @ghs_club<br>
+                <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+            </div>
+            <div class="w3-col m6">
+                <form action="/action_page.php" target="_blank">
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                        </div>
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                        </div>
+                    </div>
+                    <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+                    <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+                </form>
+            </div>
+        </div>
+    </div>
+            </div>
+        </footer>
+
+        <!-- End page content -->
+        
+        <script>
+            // Script to open and close sidebar
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("myOverlay").style.display = "block";
+            }
+
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+                document.getElementById("myOverlay").style.display = "none";
+            }
+        </script> 
