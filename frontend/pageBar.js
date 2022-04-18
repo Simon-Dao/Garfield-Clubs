@@ -15,6 +15,7 @@ function left() {
 
     generate()
     filterClubs()
+    
 }
 
 function right() {
@@ -58,7 +59,7 @@ function generate() {
 }
 
 function setAsSelected() {
-    
+
 }
 
 generate()

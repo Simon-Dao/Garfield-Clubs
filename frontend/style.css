@@ -63,3 +63,13 @@
     background-color: black;
     color: white;
 }
+
+.card-custom {
+    height: 200px;
+    padding: 20px;
+}
+
+.footer-text {
+    font-size: 30px;
+    
+}
