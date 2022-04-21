@@ -73,3 +73,14 @@
     font-size: 30px;
     
 }
+.footer-text{
+    font-size: 100px;
+}
+
+.grow {
+    transition: all .2s ease-in-out;
+  }
+
+.grow:hover {
+    transform: scale(1.5);
+  }
