@@ -56,16 +56,25 @@ async function filterClubs(e, backspace) {
 
     const filter = (club) => {
 
-      for(let tag in tags) {
-        if(club.tags.includes(tag)) return true;
-      }
-      return false
+      let result = false
+
+      tags.forEach(tag => {
+
+        console.log(club.tags.includes(tag))
+
+        if(club.tags.includes(tag))  
+        {
+          result = true
+        } 
+      })
+
+      return result
     }
 
     //filtering with tags
-    clubs.data.filter(club => filter(club))
-
-    clubs = clubs.data.slice(pageIndex*cardsPerPage - cardsPerPage, pageIndex* cardsPerPage)
+    clubs = clubs.data.filter(club => filter(club)).slice(pageIndex*cardsPerPage - cardsPerPage, pageIndex* cardsPerPage)
+    
+    console.log(clubs)
 
     createList(clubs)
 }
