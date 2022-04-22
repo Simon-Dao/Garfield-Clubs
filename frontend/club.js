@@ -26,7 +26,7 @@ function getTimesString(times) {
     console.log(times)
 
     for(var day in times) {
-        result += "</br>"+day+': '+times[day]
+        result += "<b></br>"+day+': </b>'+times[day] 
     }
     return result
 }
@@ -39,6 +39,9 @@ async function editDescription() {
     let clubName = document.querySelector('#club-names')
     clubName.innerHTML = clubs.data[0].name
     console.log(clubName.innerHTML)
+
+    let clubTags = document.querySelector('#tags')
+    clubTags.innerHTML = clubs.data[0].tags.replaceAll(";", ", ")
 
     let clubRoom = document.querySelector('#club-room')
     clubRoom.innerHTML = "Room: " + clubs.data[0].room
