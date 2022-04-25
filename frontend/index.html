@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <style>
     body,
@@ -37,9 +38,7 @@
             <p class="w3-text-grey">By Garfield Students</p>
         </div>
         <div class="w3-bar-block">
-            <a href="/frontend/index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i
-                    class="fa fa-th-large fa-fw w3-margin-right"></i>CLUB SEARCH</a>
-            <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
+            <a href="/frontend/aboutpage.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
                     class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeLeZgfR4T14WpMUzQO1YD_NMQL6zfUOltb77jYyOG4gaaR6Q/viewform" target="_blank" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
                     class="fa fa-envelope fa-fw w3-margin-right"></i>ADD A CLUB</a>
@@ -62,22 +61,28 @@
             <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i
                     class="fa fa-bars"></i></span>
             <div class="w3-container">
-                <h1><b>Garfield Clubs</b></h1>
+                <h1 style="margin-top: 3%;"><b>Garfield Clubs</b></h1>
                 <div class="w3-section w3-bottombar w3-padding-16">
-                    <span class="w3-margin-right">Filter:</span>
-                    <button class="w3-button w3-black">ALL</button>
-                    <button class="w3-button w3-white"></i>Type</button>
-                    <button class="w3-button w3-white w3-hide-small"></i>Meeting time</button>
-                    <button class="w3-button w3-white w3-hide-small"></i>Community Service</button>
+                    <button class="btn btn-secondary dropdown-toggle" style="margin-left: 1%" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Filter Clubs
+                        </button>
+                        <ul class="dropdown-menu" id="tag-dropdown" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Community Service</a></li>
+                        <li><a class="dropdown-item" href="#">STEM</a></li>
+                        <li><a class="dropdown-item" href="#">Competitive</a></li>
+                        <li><a class="dropdown-item" href="#">Social</a></li>
+                        </ul>
                     <input type="text" class="search-bar" placeholder="Search">
                 </div>
             </div>
 
-            
+
+
+
         </header>
 
         <!-- First Photo Grid-->
-        
+
         <div id="page-container">
         </div>
 
@@ -156,10 +161,11 @@
             }
                 return "";
             }
-            
+
         </script>
         <script src="tags.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="pageBar.js"></script>
         <script src="listComponent.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>

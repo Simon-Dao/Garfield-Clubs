@@ -60,8 +60,6 @@ async function filterClubs(e, backspace) {
 
       tags.forEach(tag => {
 
-        console.log(club.tags.includes(tag))
-
         if(club.tags.includes(tag))  
         {
           result = true
@@ -72,10 +70,12 @@ async function filterClubs(e, backspace) {
     }
 
     //filtering with tags
-    clubs = clubs.data.filter(club => filter(club)).slice(pageIndex*cardsPerPage - cardsPerPage, pageIndex* cardsPerPage)
-    
-    console.log(clubs)
+    if(tags.length > 0) {
+      clubs.data.filter(club => filter(club))
+    }
 
+    clubs = clubs.data.slice(pageIndex*cardsPerPage - cardsPerPage, pageIndex* cardsPerPage)
+    
     createList(clubs)
 }
 
