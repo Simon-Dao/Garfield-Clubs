@@ -45,9 +45,27 @@
 }
 
 .search-bar {
+    justify-self: flex-end;
     margin-left: 50px;
-    border-radius: 6px;
+    border-radius: 12px;
     padding: 6px;
+    max-height: 40px;
+    border: none;
+    outline: none;
+    box-shadow: 2px 3px 2px 0 rgba(0, 0, 255, .2);
+    padding-left: 15px;
+    transition: all 300ms ease;
+    width: 100px;
+}
+
+.search-bar:hover {
+    width: 200px;
+    transition: all 300ms ease;
+}
+
+.search-bar:focus {
+    background-color: white;
+    transition: all 300ms ease;
 }
 
 .centerized {
@@ -67,6 +85,7 @@
 .card-custom {
     height: 200px;
     padding: 20px;
+    border-radius: 10px;
 }
 
 .footer-text {
@@ -84,3 +103,56 @@
 .grow:hover {
     transform: scale(1.5);
   }
+
+.selected {
+    background-color: blue;
+}
+
+.transition-fade {
+    transition: 0.4s;
+    opacity: 1;
+  }
+  
+  html.is-animating .transition-fade {
+    opacity: 0;
+  }
+
+  .containerr-flex { 
+      display: flex;
+      flex-direction: column;
+  }
+
+.dropdown { 
+    max-height: 40px;
+}
+
+.tag-container {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.tag-body {
+    background-color: #3cb371;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin: 3px 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer
+}
+
+.tag-body:hover {
+    background-color: red;
+    transition: 400ms ease-in-out;
+}
+
+.tag-remove-button {
+    background-color: #3cb371;
+    border: none;
+    color: white;
+}

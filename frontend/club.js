@@ -59,11 +59,15 @@ async function editDescription() {
     clubMission.innerHTML = clubs.data[0].mission
 
     let clubInstagram = document.querySelector('#instagram')
-    clubInstagram.innerHTML = "Instagram: " + clubs.data[0].instagram 
+    clubInstagram.innerHTML = "\tInstagram: " + clubs.data[0].instagram 
 
     let clubEmail = document.querySelector('#email')
-    clubEmail.innerHTML = "Email: " + clubs.data[0].email
+    clubEmail.innerHTML = "\tEmail: " + clubs.data[0].email
 
+    let image = document.querySelector(".image")
+    
+    console.log(clubs.data[0].images)
+    image.src = clubs.data[0].images
 }
 
 editDescription()

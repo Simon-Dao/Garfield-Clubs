@@ -1,33 +1,27 @@
 let pageIndex = 1
-const cardsPerPage = 3
-
-let start = 1
-let size = 3
+const cardsPerPage = 6
 
 const pageBar = document.querySelector('#pageBar')
 
 function left() {
 
-    if(start == 1) return
+    if(pageIndex == 1) return
 
     pageIndex--
-    start--
 
     generate()
     filterClubs()
-    
 }
 
 function right() {
-    pageIndex++
-    start++
 
+    if(pageIndex >= maxPages) return 
+    pageIndex++
     generate()
     filterClubs()
 }
 
 function setPageIndex(i) {
-    console.log(i)
     pageIndex = i
     filterClubs()
 }
@@ -38,17 +32,16 @@ function generate() {
     pageBar.innerHTML = ""
 
     let tempNode = document.createElement('div')
-    tempNode.innerHTML = `<a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>`
+    tempNode.innerHTML = `<a href="#" class="w3-bar-item w3-button w3-hover-black transition-swipe">«</a>`
     tempNode.onclick = left
 
     pageBar.appendChild(tempNode)
 
-    for(let i = start; i < start + size; i++) {
-        tempNode = document.createElement('div')
-        tempNode.innerHTML = `<a href="#" class="w3-bar-item w3-button w3-hover-black">${i}</a>`
-        tempNode.onclick = () => setPageIndex(i)
-        pageBar.appendChild(tempNode)
-    }
+    tempNode = document.createElement('div')
+    tempNode.innerHTML = `<a href="#" class="w3-bar-item w3-button w3-hover-black">${pageIndex}</a>`
+    tempNode.onclick = () => setPageIndex(pageIndex)
+    pageBar.appendChild(tempNode)
+
     tempNode = document.createElement('div')
     tempNode.innerHTML = `<a href="#" onClick="right" class="w3-bar-item w3-button w3-hover-black">»</a>`
     tempNode.onclick = right

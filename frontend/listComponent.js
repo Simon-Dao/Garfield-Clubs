@@ -1,6 +1,7 @@
 var baseURL = 'http://localhost:8080/'
 var searchBar = document.querySelector('.search-bar')
-let container = document.querySelector("#page-container")
+let container = document.querySelector(".page-container")
+let maxPages = 1000
 
 var clubs = {}
 
@@ -71,11 +72,32 @@ async function filterClubs(e, backspace) {
 
     //filtering with tags
     if(tags.length > 0) {
-      clubs.data.filter(club => filter(club))
+      let newClub = []
+
+      //loop through all the clubs
+      for(let club of clubs.data) {
+        for(let tag of tags) {
+          
+          for(let ctag of club.tags.split(';')) {
+            if(ctag.toLowerCase() === tag.toLowerCase()) {
+              newClub.push(club)
+            }
+          }
+        }
+      }
+
+      clubs.data = newClub
+
     }
+    maxPages = Math.floor(clubs.data.length / cardsPerPage + 1)
 
     clubs = clubs.data.slice(pageIndex*cardsPerPage - cardsPerPage, pageIndex* cardsPerPage)
     
+    if(clubs.length == 0) {
+      pageIndex = 1
+      generate()
+    }
+    createTags()
     createList(clubs)
 }
 
