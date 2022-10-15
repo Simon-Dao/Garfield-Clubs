@@ -1,0 +1,5 @@
+GET http://localhost:8080/get-clubs
+
+###
+
+GET http://localhost:8080/get-num-clubs

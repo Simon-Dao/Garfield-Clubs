@@ -16,18 +16,18 @@ const editedClubBlurb = (blurb) => {
 const createList = async (clubs) => {
     
     container.innerHTML = ""
-    
+
     clubs.forEach((club, index) => {
         
-        let cardHTML = '<div class="w3-row-padding">'+
-        '<div style="width: 300px" class="w3-margin-bottom">'+
-        '<a href="description.html" style="text-decoration: none;" onClick="setCookie(\'club\',\''+club.name+'\')">' +
-            '<div class="w3-container w3-white card-custom">'+
-            `    <p><b>${editedClubBlurb(club.name)}</b></p>`+
-           `     <p><b>${club.blurb}</b></p>`+
-         '   </div>'+
-         '</a>'
-        '</div>'
+        let cardHTML = `<div class="w3-row-padding">
+        <div style="width: 300px" class="w3-margin-bottom">
+        <a href="description.html" style="text-decoration: none;" onClick="setCookie(\'club\',\''+club.name+'\')">
+            <div class="w3-container w3-white card-custom">
+                <p><b>${editedClubBlurb(club.name)}</b></p>
+                <p><b>${club.blurb}</b></p>
+            </div>
+         </a>
+        </div>`
         
         //make the element
         let clubHtml = document.createElement('div')
@@ -39,6 +39,7 @@ const createList = async (clubs) => {
     container.style = 'display: flex; flex-wrap: wrap;'
 }
 
+//todo refactor this code pls
 async function filterClubs(e, backspace) {
 
     let key = typeof e !== "undefined"  ? e.key : "" 
@@ -101,8 +102,7 @@ async function filterClubs(e, backspace) {
     createList(clubs)
 }
 
-searchBar.onkeypress = async (e) => {
-    
+searchBar.onkeypress = async (e) => {  
     filterClubs(e)
 } 
 

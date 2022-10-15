@@ -56,6 +56,19 @@ router.get('/get-clubs', async (req, res) => {
     }
 })
 
+router.get('/get-num-clubs', async (req, res) => {
+
+    try {
+        const data = await Model.find({})
+        
+        console.log(data)
+
+        res.send(data)
+    } catch(err) {
+        sendError(err,res)
+    }
+})
+
 router.get('/get-clubs/:prefix', async (req, res) => {
     
     let prefix = req.params.prefix
